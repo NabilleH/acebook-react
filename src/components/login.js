@@ -13,27 +13,27 @@ class Login extends Component {
     return (
       <div>
          <h4>Log in</h4>
-         <form onSubmit={e => {e.preventDefault();}}>
+         <form onSubmit={e => {e.preventDefault();}} className="form-login">
            <div className='form-input'>
              <input label="Email"
-                    class="email"
+                    className="email"
                    type="email"
-                   name="email" />
+                   name="email" placeholder="email" />
              <input label="Password"
-                    class="password"
+                    className="password"
                    type="password"
-                     name="password" />
+                     name="password" placeholder="password" />
            </div>
-           <button handleClick={this.handleLogin}
+           <button type="submit" handleclick={this.handleLogin}
                    name='login'
-                   class='login'
-                   label='Log In'/>
+                   className='login'
+                   label='Log In'>Log in</button>
          </form>
          <a href='/sign_up'>
            <button name='signup'
-                   class='secondary'
-                   label='Sign Up'/>
-                   </a>
+                   className='secondary'
+                   label='Sign Up'>Sign up</button>
+         </a>
       </div>
     );
   }
