@@ -5,8 +5,8 @@ class Post extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      message: 'This is a test post 1.',
-      username: 'mrtest',
+      message: '',
+      username: '',
       created_at: '',
     }
   }
@@ -14,13 +14,13 @@ class Post extends Component {
     return (
       <div className='post'>
         <div className='post-message'>
-          {this.state.message}
+          message:{this.props.message}
         </div>
         <div className='post-username'>
-          <small> Username:{this.state.username} </small>
+          <small> Username:{this.props.username} </small>
         </div>
         <div className='post-created_at'>
-          <small> Created at: {this.state.created_at} </small>
+          <small> Created at: {this.props.created_at} </small>
         </div>
       </div>
     )

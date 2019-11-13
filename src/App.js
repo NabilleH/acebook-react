@@ -5,6 +5,8 @@ import './App.css';
 import Login from './components/login';
 import Post from './components/singlePost';
 
+import AllPosts from './components/allPosts';
+
 
 class App extends Component {
   constructor(props){
@@ -18,6 +20,7 @@ class App extends Component {
         </header>
         <Login/>
         <Post/>
+        <AllPosts/>
       </div>
     );
   }
