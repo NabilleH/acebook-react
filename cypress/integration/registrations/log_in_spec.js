@@ -7,6 +7,6 @@ describe("log in form", function () {
   })
 
   it("can submit a valid form", function () {
-    cy.get('form').submit()
+    cy.get('.form-login').submit()
   })
 })
