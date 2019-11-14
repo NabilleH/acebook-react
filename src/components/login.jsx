@@ -48,13 +48,10 @@ class Login extends Component {
                    className='login'
                    label='Log In'>Log in</button>
          </form>
-         <a href='/sign_up'>
-           <button name='signup'
-                   className='secondary'
-                   label='Sign Up'>Sign up</button>
-         </a>
-         <Link to="/log_in">
-         <button type='button'>Log In</button>
+         <Link to="/sign_up">
+         <button name='signup'
+                 className='secondary'
+                 label='Sign Up'>Sign up</button>
          </Link>
       </div>
     );

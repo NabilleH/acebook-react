@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import {Route} from 'react-router-dom'
 import Login from './components/login';
+
 import Navbar from './components/navbar';
 
 import AllPosts from './components/allPosts';
@@ -31,11 +33,18 @@ class App extends Component {
 
         <header className="App-header">
           <Navbar/>
-
         </header>
-        <Login updateAuthToken={this.updateAuthToken}
-               authToken={this.state.authToken} />
-               <AllPosts/>
+
+        <Route exact={true} path="/posts"
+          render={
+            (props) => <AllPosts/> }
+               />
+
+        <Route exact={true} path="/"
+          render={ (props)=> <Login updateAuthToken={this.updateAuthToken}
+               authToken={this.state.authToken} /> }
+               />
+
       </div>
     );
   }
