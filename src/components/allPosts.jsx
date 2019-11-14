@@ -18,14 +18,6 @@ class AllPosts extends Component {
 
    getPosts() {
      var self = this
-    //  fetch('http://localhost:5000/api/v1/posts', {
-    //    method: 'GET',
-    //    mode: 'no-cors'
-    //   })
-    //  .then(function(response) {console.log(response.json())})
-    //  .catch(function(error) {
-    //   console.log(error)
-    // })
     axios({
       url: 'http://localhost:5000/api/v1/posts',
       mode: 'no-cors'
