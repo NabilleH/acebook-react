@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {Link} from 'react-router-dom'
 import ReactDOM from 'react-dom';
 import axios from 'axios'
 
@@ -19,7 +19,7 @@ class SignUp extends Component {
         }
     })
     .then(function(response) {
-      self.props.updateAuthToken(response.data.success.token, response.data.success.username)
+      self.props.updateAuthState(response.data.success.token, response.data.success.username)
     })
     .catch(function(error) {
       console.log(error)
@@ -56,6 +56,12 @@ class SignUp extends Component {
                 className='secondary'
                 label='Sign Up'>Sign up</button>
       </a>
+      <Link to="/log_in">
+      <button name='login'
+              id="navbar-login-button"
+              className='secondary'
+              label='log in'>Log In</button>
+      </Link>
       </div>
     )
   }

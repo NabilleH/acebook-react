@@ -19,7 +19,7 @@ class Login extends Component {
         }
     })
     .then(function(response) {
-      self.props.updateAuthToken(response.data.success.token, response.data.success.username)
+      self.props.updateAuthState(response.data.success.token, response.data.success.username)
     })
     .catch(function(error) {
       console.log(error)
@@ -27,6 +27,7 @@ class Login extends Component {
   }
 
   render() {
+    var self = this
     return (
       <div>
          <h4>Log in</h4>
@@ -43,16 +44,23 @@ class Login extends Component {
                    type="password"
                      name="password" placeholder="password" />
            </div>
-           <button type="submit" onClick={this.handleLogin}
-                   name='login'
-                   className='login'
-                   label='Log In'>Log in</button>
+
          </form>
-         <Link to="/sign_up">
+         <Link to="/posts">
+          <button type="submit" onClick={this.handleLogin}
+                  name='login'
+                  className='login'
+                  label='Log In'>Log in</button>
+         </Link>
+         <Link to="/">
          <button name='signup'
                  className='secondary'
-                 label='Sign Up'>Sign up</button>
+                 label='Sign Up'
+                 >Sign up</button>
          </Link>
+
+
+
       </div>
     );
   }

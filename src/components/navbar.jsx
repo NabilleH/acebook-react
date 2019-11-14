@@ -10,9 +10,9 @@ class Navbar extends Component {
 
   sessionButton() {
     if (this.props.authToken) {
-      return <Logout updateAuthToken={this.props.updateAuthToken}/>
+      return <Logout updateAuthState={this.props.updateAuthState}/>
     } else {
-      return null 
+      return null
     }
   }
   render() {
