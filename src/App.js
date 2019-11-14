@@ -29,17 +29,13 @@ class App extends Component {
     return (
       <div className="App">
 
-        <header>
-        </header>
-        <Login/>
-        <AllPosts/>
-
         <header className="App-header">
           <Navbar/>
         </header>
 
         <Login updateAuthToken={this.updateAuthToken}
                authToken={this.state.authToken} />
+          <AllPosts/>
 
       </div>
     );
