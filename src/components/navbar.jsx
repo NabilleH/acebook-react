@@ -12,7 +12,7 @@ class Navbar extends Component {
     if (this.props.authToken) {
       return <Logout updateAuthToken={this.props.updateAuthToken}/>
     } else {
-      return null
+      return null 
     }
   }
   render() {
@@ -25,7 +25,7 @@ class Navbar extends Component {
           <ul className="logout-button">
             {this.sessionButton()}
           </ul>
-          
+
           <ul>
             <Link to='/posts'>
               <a className="homepage-link" href="javascript:void(0)">Home</a>
