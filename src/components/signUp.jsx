@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import ReactDOM from "react-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class SignUp extends Component {
   constructor(props) {
@@ -68,16 +69,17 @@ class SignUp extends Component {
             />
           </div>
         </form>
-
-        <button
-          type="submit"
-          onClick={this.handleSignUp}
-          name="signup"
-          className="secondary"
-          label="Sign Up"
-        >
-          Sign Up
-        </button>
+          <Link to="/posts">
+            <button
+              type="submit"
+              onClick={this.handleSignUp}
+              name="signup"
+              className="secondary"
+              label="Sign Up"
+            >
+              Sign Up
+            </button>
+          </Link>
       </div>
     );
   }
