@@ -13,14 +13,15 @@ class App extends Component {
       authToken: null,
       username: null
     }
+    this.updateAuthToken = this.updateAuthToken.bind(this)
   }
 
   updateAuthToken(token, username) {
+    console.log(token, username)
     this.setState({
       authToken: token,
       username: username,
     })
-    console.log(this.state.authToken)
   }
 
   render() {
@@ -30,7 +31,8 @@ class App extends Component {
           <Navbar/>
         </header>
 
-        <Login updateAuthToken={this.updateAuthToken} />
+        <Login updateAuthToken={this.updateAuthToken}
+               authToken={this.state.authToken} />
         
       </div>
     );

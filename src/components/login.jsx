@@ -11,21 +11,14 @@ class Login extends Component {
   handleLogin(e) {
     e.preventDefault()
     let self = this
-    let email = document.getElementById("email-input").value
-    axios({
-      url:'http://localhost:5000/api/v1/auths',
-      method:'POST',
-      mode: 'cors',
-      params:{ 
+    axios.post('/api/v1/auths',{
         auth: {
-          email: email,
-          password: document.getElementById("password-input").value,
-          }
-      }
+          email: document.getElementById('email-input').value,
+          password: document.getElementById('password-input').value
+        }
     })
     .then(function(response) {
-      console.log(response)
-      self.props.updateAuthToken(response.data.token, response.body.success.username)
+      self.props.updateAuthToken(response.data.success.token, response.data.success.username)
     })
     .catch(function(error) {
       console.log(error)
