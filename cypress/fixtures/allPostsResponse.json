@@ -1,4 +1,4 @@
-
+[
   {
     "id": 1,
     "message": "This is a test post 1.",
@@ -10,4 +10,17 @@
       "id": 2,
       "username":"bob"
     }
+  },
+  {
+    "id": 2,
+    "message": "This is a test post 2.",
+    "created_at": "2019-11-13T10:40:45.118Z",
+    "updated_at": "2019-11-13T10:40:45.118Z",
+    "user_id": 3,
+    "wall_id": 3,
+    "user": {
+      "id": 3,
+      "username":"mike"
+    }
   }
+]
