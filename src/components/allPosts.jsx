@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import Post from './singlePost'
 import axios from 'axios'
 
@@ -37,7 +36,7 @@ class AllPosts extends Component {
          <div className='post-list'>
             {this.state.posts.map(post => <Post key={post.id}
                                            message={post.message}
-                                           username={post.username}
+                                           username={post.user.username}
                                         created_at={post.created_at}/>
                                           )}
           </div>
