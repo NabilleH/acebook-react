@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import {Route} from 'react-router-dom'
 import Login from './components/login';
 import SignUp from './components/signUp';
 import Navbar from './components/navbar';
@@ -33,8 +34,17 @@ class App extends Component {
           <Navbar/>
         </header>
 
-        <SignUp />
+        <Route exact={true} path="/posts"
+          render={
+            (props) => <AllPosts/> }
+               />
 
+        <Route exact={true} path="/"
+          render={ (props)=> <Login updateAuthToken={this.updateAuthToken}
+               authToken={this.state.authToken} /> }
+               />
+
+        <SignUp />
 
       </div>
     );
