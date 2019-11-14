@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Login from './components/login';
+import SignUp from './components/signUp';
 import Navbar from './components/navbar';
-
 import AllPosts from './components/allPosts';
 
 
@@ -29,17 +29,12 @@ class App extends Component {
     return (
       <div className="App">
 
-        <header>
-        </header>
-        <Login/>
-        <AllPosts/>
-
         <header className="App-header">
           <Navbar/>
         </header>
 
-        <Login updateAuthToken={this.updateAuthToken}
-               authToken={this.state.authToken} />
+        <SignUp />
+
 
       </div>
     );
