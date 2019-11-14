@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import ReactDOM from 'react-dom';
 import axios from 'axios'
 
@@ -31,12 +32,12 @@ class Login extends Component {
          <h4>Log in</h4>
          <form onSubmit={e => {e.preventDefault();}} className="form-login">
            <div className='form-input'>
-             <input  id="email-input"  
+             <input  id="email-input"
                     label="Email"
                     className="email"
                    type="email"
                    name="email" placeholder="email" />
-             <input id="password-input" 
+             <input id="password-input"
                     label="Password"
                     className="password"
                    type="password"
