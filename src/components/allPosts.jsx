@@ -23,7 +23,7 @@ class AllPosts extends Component {
       mode: 'no-cors'
       })
     .then(function(response) {
-      console.log(response)
+      self.setState({posts: response.data})
     })
     .catch(function(error) {
       console.log(error)
@@ -31,11 +31,11 @@ class AllPosts extends Component {
   }
 
    render() {
-     console.log(this.state.posts)
+     console.log("this state", this.state.posts)
      if (this.state.posts !== null) {
        return (
          <div className='post-list'>
-            {this.state.posts.map(post => <Post id={post.id}
+            {this.state.posts.map(post => <Post key={post.id}
                                            message={post.message}
                                            username={post.username}
                                         created_at={post.created_at}/>
