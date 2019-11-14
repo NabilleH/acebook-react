@@ -18,7 +18,7 @@ class AllPosts extends Component {
    getPosts() {
      var self = this
     axios({
-      url: 'http://localhost:5000/api/v1/posts',
+      url: '/api/v1/posts',
       mode: 'no-cors'
       })
     .then(function(response) {
