@@ -13,7 +13,7 @@ class Navbar extends Component {
       return <Logout updateAuthToken={this.props.updateAuthToken} />;
     } else {
       return (
-        <Link to="/log_in">
+        <Link id="navbar-login-button" to="/log_in">
           <a className="homepage-link" href="javascript:void(0)">
             Login
           </a>
