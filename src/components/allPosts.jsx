@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Post from './singlePost'
+import axios from 'axios'
 
 class AllPosts extends Component {
   constructor(props) {
@@ -17,14 +18,25 @@ class AllPosts extends Component {
 
    getPosts() {
      var self = this
-     fetch('/api/v1/posts')
-     .then(response => { return response.json()
-     })
-     .then(function(response) {
-       self.setState( { posts: response.data } )
-     }
-    )
-   }
+    //  fetch('http://localhost:5000/api/v1/posts', {
+    //    method: 'GET',
+    //    mode: 'no-cors'
+    //   })
+    //  .then(function(response) {console.log(response.json())})
+    //  .catch(function(error) {
+    //   console.log(error)
+    // })
+    axios({
+      url: 'http://localhost:5000/api/v1/posts',
+      mode: 'no-cors'
+      })
+    .then(function(response) {
+      console.log(response)
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
+  }
 
    render() {
      console.log(this.state.posts)
