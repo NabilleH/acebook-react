@@ -9,7 +9,19 @@ import Navbar from './components/navbar';
 class App extends Component {
   constructor(props){
     super(props);
+    this.state = {
+      authToken: null,
+      username: null
     }
+  }
+
+  updateAuthToken(token, username) {
+    this.setState({
+      authToken: token,
+      username: username,
+    })
+    console.log(this.state.authToken)
+  }
 
   render() {
     return (
@@ -18,7 +30,7 @@ class App extends Component {
           <Navbar/>
         </header>
 
-        <Login/>
+        <Login updateAuthToken={this.updateAuthToken} />
         
       </div>
     );
