@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import {Route} from 'react-router-dom'
 import Login from './components/login';
-
+import SignUp from './components/signUp';
 import Navbar from './components/navbar';
-
 import AllPosts from './components/allPosts';
 
 
@@ -44,6 +43,8 @@ class App extends Component {
           render={ (props)=> <Login updateAuthToken={this.updateAuthToken}
                authToken={this.state.authToken} /> }
                />
+
+        <SignUp />
 
       </div>
     );
