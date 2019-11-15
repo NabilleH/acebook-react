@@ -5,7 +5,6 @@ import Login from './components/login';
 import SignUp from './components/signUp';
 import Navbar from './components/navbar';
 import AllPosts from './components/allPosts';
-import AllComments from './components/allComments';
 
 class App extends Component {
   constructor(props){
@@ -37,7 +36,7 @@ class App extends Component {
 
         <Route exact={true} path="/posts"
           render={
-            (props) => <AllPosts/> }
+            (props) => <AllPosts authToken={this.state.authToken}/> }
                />
 
         <Route exact={true} path="/log_in"
