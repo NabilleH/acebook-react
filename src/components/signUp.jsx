@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom'
-import axios from 'axios'
+import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
+import axios from "axios";
+import "./formStyle.css";
 
 class SignUp extends Component {
   constructor(props) {
@@ -18,76 +19,87 @@ class SignUp extends Component {
           email: document.getElementById("email-input").value,
           password: document.getElementById("password-input").value
         }
-    })
-    .then(function(response) {
-      axios.post("/api/v1/auths", {
-        auth: {
-          email: document.getElementById("email-input").value,
-          password: document.getElementById("password-input").value
-        }
-      }).then(function(response) {
-        self.props.updateAuthState(response.data.success.token, response.data.success.username)
+      })
+      .then(function(response) {
+        axios
+          .post("/api/v1/auths", {
+            auth: {
+              email: document.getElementById("email-input").value,
+              password: document.getElementById("password-input").value
+            }
+          })
+          .then(function(response) {
+            self.props.updateAuthState(
+              response.data.success.token,
+              response.data.success.username
+            );
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
       })
       .catch(function(error) {
-        console.log(error)
-      })
-    })
-    .catch(function(error) {
-      console.log(error)
-    })
+        console.log(error);
+      });
   }
 
   render() {
     if (this.props.authToken) {
-      return <Redirect to='/posts' />
+      return <Redirect to="/posts" />;
     } else {
       return (
-        <div>
+        <div className="form-container">
           <h3>Sign Up</h3>
           <form
             onSubmit={e => {
               e.preventDefault();
             }}
-            className="form-signup"
+            className="form-login"
           >
-            <div className="form-input">
+            <div class="form-group">
+              <label></label>
               <input
                 id="email-input"
-                label="Email"
-                className="email"
-                type="email"
                 name="email"
                 placeholder="email"
-              />
-              <br></br>
-              <input
-                id="username-input"
-                label="Username"
-                className="username"
                 type="text"
-                name="username"
-                placeholder="username"
-              />
-              <br></br>
+                required="required"
+                className="form-control"
+              ></input>
+            </div>
+            <div class="form-group">
+              <label></label>
               <input
                 id="password-input"
-                label="Password"
-                className="password"
-                type="password"
                 name="password"
                 placeholder="password"
-              />
+                type="password"
+                className="form-control"
+                required="required"
+              ></input>
+            </div>
+            <div class="form-group">
+              <label></label>
+              <input
+                id="username-input"
+                name="username"
+                placeholder="username"
+                type="text"
+                className="form-control"
+                required="required"
+              ></input>
+            </div>
+            <div class="form-group">
+              <button
+                name="submit"
+                type="submit"
+                className="btn btn-primary"
+                onClick={this.handleSignUp}
+              >
+                Submit
+              </button>
             </div>
           </form>
-              <button
-                type="submit"
-                onClick={this.handleSignUp}
-                name="signup"
-                className="signup-button"
-                label="Sign Up"
-              >
-                Sign Up
-              </button>
         </div>
       );
     }

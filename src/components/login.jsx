@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
+import "./formStyle.css";
 
 class Login extends Component {
   constructor(props) {
@@ -31,10 +32,10 @@ class Login extends Component {
 
   render() {
     if (this.props.authToken) {
-      return <Redirect to='/posts' />
+      return <Redirect to="/posts" />;
     } else {
       return (
-        <div>
+        <div className="form-container">
           <h4>Log in</h4>
           <form
             onSubmit={e => {
@@ -61,19 +62,18 @@ class Login extends Component {
               />
             </div>
 
-              <button
-                type="submit"
-                onClick={this.handleLogin}
-                name="login"
-                className="login-button"
-                label="Log In"
-              >
-                Log In
-              </button>
-
+            <button
+              type="submit"
+              onClick={this.handleLogin}
+              name="login"
+              className="login-button btn btn-primary"
+              label="Log In"
+            >
+              Log In
+            </button>
           </form>
           <Link to="/">
-            <button name="signup" className="secondary" label="Sign Up">
+            <button name="signup" className="btn btn-primary" label="Sign Up">
               Sign up
             </button>
           </Link>
