@@ -31,7 +31,7 @@ class NewPost extends Component {
   render() {
     if (this.props.authToken) {
       return(
-        <div className="new-post-container">
+        <div className="new-post-container form-container">
           <form className="new-post-form"
                 onSubmit={e=> { e.preventDefault() }}>
             <div className="form-group">
