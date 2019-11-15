@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import ReactDOM from "react-dom";
 import axios from "axios";
 
@@ -31,53 +31,56 @@ class Login extends Component {
   }
 
   render() {
-    var self = this
-    return (
-      <div>
-        <h4>Log in</h4>
-        <form
-          onSubmit={e => {
-            e.preventDefault();
-          }}
-          className="form-login"
-        >
-          <div className="form-input">
-            <input
-              id="email-input"
-              label="Email"
-              className="email"
-              type="email"
-              name="email"
-              placeholder="email"
-            />
-            <input
-              id="password-input"
-              label="Password"
-              className="password"
-              type="password"
-              name="password"
-              placeholder="password"
-            />
-          </div>
-          <Link to="/posts">
-            <button
-              type="submit"
-              onClick={this.handleLogin}
-              name="login"
-              className="secondary"
-              label="Log In"
-            >
-              Log In
+    if (this.props.authToken) {
+      return <Redirect to='/posts' />
+    } else {
+      return (
+        <div>
+          <h4>Log in</h4>
+          <form
+            onSubmit={e => {
+              e.preventDefault();
+            }}
+            className="form-login"
+          >
+            <div className="form-input">
+              <input
+                id="email-input"
+                label="Email"
+                className="email"
+                type="email"
+                name="email"
+                placeholder="email"
+              />
+              <input
+                id="password-input"
+                label="Password"
+                className="password"
+                type="password"
+                name="password"
+                placeholder="password"
+              />
+            </div>
+            <Link to="/posts">
+              <button
+                type="submit"
+                onClick={this.handleLogin}
+                name="login"
+                className="secondary"
+                label="Log In"
+              >
+                Log In
+              </button>
+            </Link>
+          </form>
+          <Link to="/">
+            <button name="signup" className="secondary" label="Sign Up">
+              Sign up
             </button>
           </Link>
-        </form>
-        <Link to="/">
-          <button name="signup" className="secondary" label="Sign Up">
-            Sign up
-          </button>
-        </Link>
-      </div>
-    );
+        </div>
+      );
+    }
   }
 }
 export default Login;
