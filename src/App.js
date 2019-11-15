@@ -32,7 +32,8 @@ class App extends Component {
       <div className="App">
 
         <header className="App-header">
-          <Navbar/>
+          <Navbar updateAuthState={this.updateAuthState}
+            authToken={this.state.authToken}/>
         </header>
 
         <Route exact={true} path="/posts"

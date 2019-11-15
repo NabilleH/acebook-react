@@ -61,7 +61,7 @@ class Login extends Component {
                 placeholder="password"
               />
             </div>
-            <Link to="/posts">
+            
               <button
                 type="submit"
                 onClick={this.handleLogin}
@@ -71,7 +71,7 @@ class Login extends Component {
               >
                 Log In
               </button>
-            </Link>
+
           </form>
           <Link to="/">
             <button name="signup" className="secondary" label="Sign Up">

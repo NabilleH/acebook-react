@@ -10,7 +10,7 @@ class Navbar extends Component {
 
   sessionButton() {
     if (this.props.authToken) {
-      return <Logout updateAuthToken={this.props.updateAuthToken} />;
+      return <Logout updateAuthState={this.props.updateAuthState} label="Log Out Hun?" />;
     } else {
       return (
         <Link id="navbar-login-button" to="/log_in">
@@ -22,6 +22,7 @@ class Navbar extends Component {
     }
   }
   render() {
+    console.log('here')
     return (
       <header>
         <nav className="navbar-container">
