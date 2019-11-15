@@ -3,7 +3,7 @@ beforeEach(function() {
   cy.fixture('allPostsResponse.json').as('allPostsResponse')
   cy.server()
   cy.route('/api/v1/posts', '@allPostsResponse')
-  cy.visit('http://localhost:3000')
+  cy.visit('http://localhost:3000/posts')
 })
   it("shows a single post", function () {
 

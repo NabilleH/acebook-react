@@ -5,10 +5,9 @@ import Login from './components/login';
 import SignUp from './components/signUp';
 import Navbar from './components/navbar';
 import AllPosts from './components/allPosts';
-
+import AllComments from './components/allComments';
 
 class App extends Component {
-
   constructor(props){
     super(props);
     this.state = {

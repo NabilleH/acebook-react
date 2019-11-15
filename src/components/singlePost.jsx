@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AllComments from './allComments'
 
 class Post extends Component {
 
@@ -13,6 +14,9 @@ class Post extends Component {
         </div>
         <div className='post-created_at'>
           <small> Created at: {this.props.created_at} </small>
+        </div>
+        <div className='post-comments'>
+        <AllComments comments={this.props.comments}/>
         </div>
       </div>
     )
