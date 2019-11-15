@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+
 
 class Logout extends Component {
   constructor(props) {
@@ -9,12 +9,12 @@ class Logout extends Component {
 
   handleLogout(e) {
     e.preventDefault()
-    this.props.updateAuthToken(null)
+    this.props.updateAuthState(null,null)
   }
 
   render() {
     return (
-      <a href='#' onClick={this.props.handleClick}>
+      <a href="# " onClick={this.props.handleLogout}>
       {this.props.label}
       </a>
     )

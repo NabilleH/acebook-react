@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Route} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Login from './components/login';
 import SignUp from './components/signUp';
 import Navbar from './components/navbar';
@@ -14,10 +14,10 @@ class App extends Component {
       authToken: null,
       username: null
     }
-    this.updateAuthToken = this.updateAuthToken.bind(this)
+    this.updateAuthState = this.updateAuthState.bind(this)
   }
 
-  updateAuthToken(token, username) {
+  updateAuthState(token, username) {
     console.log(token, username)
     this.setState({
       authToken: token,
@@ -26,11 +26,13 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <div className="App">
 
         <header className="App-header">
-          <Navbar/>
+          <Navbar updateAuthState={this.updateAuthState}
+            authToken={this.state.authToken}/>
         </header>
 
         <Route exact={true} path="/posts"
@@ -39,14 +41,16 @@ class App extends Component {
                />
 
         <Route exact={true} path="/log_in"
-          render={ (props)=> <Login updateAuthToken={this.updateAuthToken}
+          render={ (props)=> <Login updateAuthState={this.updateAuthState}
                authToken={this.state.authToken} /> }
                />
 
          <Route exact={true} path="/"
-           render={ (props)=> <SignUp updateAuthToken={this.updateAuthToken}
+           render={ (props)=> <SignUp updateAuthState={this.updateAuthState}
                 authToken={this.state.authToken}/> }
                 />
+
+
 
       </div>
     );

@@ -1,40 +1,39 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import Logout from './logout';
-import {Link} from 'react-router-dom'
+import React, { Component } from "react";
+import Logout from "./logout";
+import { Link } from "react-router-dom";
 
 class Navbar extends Component {
-  constructor(props) {
-    super(props)
-  }
+
 
   sessionButton() {
     if (this.props.authToken) {
-      return <Logout updateAuthToken={this.props.updateAuthToken}/>
+      return <Logout updateAuthState={this.props.updateAuthState} label="Log Out Hun?" />;
     } else {
-      return null 
+      return (
+        <Link id="navbar-login-button" to="/log_in">
+          Login
+        </Link>
+      );
     }
   }
   render() {
     return (
       <header>
         <nav className="navbar-container">
-          <Link to='/'>
-            <a className="homepage-link" href="javascript:void(0)">Winkleface</a>
+          <Link to="/">
+            Winkleface
           </Link>
-          <ul className="logout-button">
-            {this.sessionButton()}
-          </ul>
-
-          <ul>
-            <Link to='/posts'>
-              <a className="homepage-link" href="javascript:void(0)">Home</a>
+          <ul className="session-button">
+            {this.sessionButton()}</ul>
+          <ul className='home-button'>
+            <Link to="/posts">
+              Home
             </Link>
           </ul>
         </nav>
       </header>
-    )
+    );
   }
 }
 
-export default Navbar
+export default Navbar;

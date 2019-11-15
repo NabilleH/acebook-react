@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+/coverage/plugins
+/coverage/screenshots
+/coverage/support
+/coverage/videos
