@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import './newPosts.css'
 
 class NewPost extends Component {
   constructor(props) {
@@ -9,10 +10,9 @@ class NewPost extends Component {
 
   handleNewPost() {
     var self = this
-    console.log(this.props.authToken)
     axios.post('/api/v1/posts',
       {post: {
-        message: document.getElementById("textarea").value,
+        message: document.getElementById("new-post-message").value,
         wall_id: 1
       }},
       {headers: {
@@ -35,20 +35,20 @@ class NewPost extends Component {
           <form className="new-post-form"
                 onSubmit={e=> { e.preventDefault() }}>
             <div className="form-group">
-              <label htmlFor="textarea">
+              <label htmlFor="new-post-message">
                 Post Something Hun
               </label>
-              <textarea id="textarea"
-                name="textarea"
+              <textarea id="new-post-message"
+                name="new-post-message"
                 cols="40"
                 rows="5"
-                className="form-control">
+                className="new-post-message form-control">
               </textarea>
             </div>
             <div className="form-group">
-              <button name="submit"
+              <button name="submit-post"
                type="submit"
-               className="btn btn-primary"
+               className="submit-post btn btn-primary"
                onClick={this.handleNewPost}>
                Post Away
               </button>
@@ -59,7 +59,7 @@ class NewPost extends Component {
     } else {
       return (
         <div>
-        <h4> Sign in to post babes </h4>
+        <h4 className='login-message'> Log in to post babes </h4>
         </div>
       )
     }

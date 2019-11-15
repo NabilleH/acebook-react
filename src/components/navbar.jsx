@@ -7,7 +7,7 @@ class Navbar extends Component {
   sessionButton() {
     if (this.props.authToken) {
       return (
-        <Logout
+        <Logout className='session-button'
           updateAuthState={this.props.updateAuthState}
           label="Log Out Hun?"
         />
@@ -16,7 +16,7 @@ class Navbar extends Component {
       return (
         <Link
           id="navbar-login-button"
-          className="nav-item nav-link hover"
+          className="session-button nav-item nav-link hover"
           to="/log_in"
         >
           Login
@@ -34,7 +34,7 @@ class Navbar extends Component {
           </Link>
           <div className="collapse navbar-collapse" id="navbarNav">
             <div className="navbar-nav">
-              <Link to="/posts" className="nav-item nav-link hover">
+              <Link to="/posts" className="posts-button nav-item nav-link hover">
                 Posts
               </Link>
               {this.sessionButton()}

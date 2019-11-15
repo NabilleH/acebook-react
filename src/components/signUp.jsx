@@ -56,37 +56,37 @@ class SignUp extends Component {
             }}
             className="form-signup"
           >
-            <div class="form-group">
+            <div className="form-group">
               <input
                 id="email-input"
                 name="email"
                 placeholder="email"
                 type="text"
                 required="required"
-                className="form-control"
+                className="email form-control"
               ></input>
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <input
                 id="username-input"
                 name="username"
                 placeholder="username"
                 type="text"
-                className="form-control"
+                className="username form-control"
                 required="required"
               ></input>
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <input
                 id="password-input"
                 name="password"
                 placeholder="password"
                 type="password"
-                className="form-control"
+                className="password form-control"
                 required="required"
               ></input>
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <button
                 name="signup"
                 type="submit"

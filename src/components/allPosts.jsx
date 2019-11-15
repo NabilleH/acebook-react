@@ -31,8 +31,6 @@ class AllPosts extends Component {
   }
 
    render() {
-     // console.log("this state", this.state.posts)
-
 
      if (this.state.posts !== null) {
        return (

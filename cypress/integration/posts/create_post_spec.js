@@ -6,16 +6,16 @@ describe("create a post", function (){
 
     cy.get('.email').type('person@person.com')
     cy.get('.password').type('password')
-    cy.get('.login').click()
+    cy.get('.login-button').click()
 
     cy.url().should('include', '/posts')
 
-    cy.get('.form-new-message').type('This is a test post 1.')
-    cy.get('.form-new-post').submit()
+    cy.get('.new-post-message').type('This is a test post 1.')
+    cy.get('.submit-post').click()
 
     cy.url().should('include', '/posts')
 
-    cy.get('.post-message').contains('This is a test post 1.')
-    cy.get('.post-username').contains('person')
+    cy.contains('This is a test post 1.')
+    cy.contains('person')
   })
 })
