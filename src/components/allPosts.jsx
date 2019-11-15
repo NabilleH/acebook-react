@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Post from './singlePost'
+import NewPost from './newPosts'
 import axios from 'axios'
 
 class AllPosts extends Component {
@@ -31,9 +32,12 @@ class AllPosts extends Component {
 
    render() {
      // console.log("this state", this.state.posts)
+
+
      if (this.state.posts !== null) {
        return (
          <div className='post-list'>
+         <NewPost authToken={this.props.authToken} getPosts={this.getPosts}/>
             {this.state.posts.map(post => <Post key={post.id}
                                            message={post.message}
                                            username={post.user.username}

@@ -38,7 +38,7 @@ class App extends Component {
 
         <Route exact={true} path="/posts"
           render={
-            (props) => <AllPosts/> }
+            (props) => <AllPosts authToken={this.state.authToken}/> }
                />
 
         <Route exact={true} path="/log_in"
