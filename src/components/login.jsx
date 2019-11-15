@@ -20,7 +20,7 @@ class Login extends Component {
         }
       })
       .then(function(response) {
-        self.props.updateAuthToken(
+        self.props.updateAuthState(
           response.data.success.token,
           response.data.success.username
         );

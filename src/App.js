@@ -42,7 +42,6 @@ class App extends Component {
 
         <Route exact={true} path="/log_in"
           render={ (props)=> <Login updateAuthState={this.updateAuthState}
-
                authToken={this.state.authToken} /> }
                />
 
