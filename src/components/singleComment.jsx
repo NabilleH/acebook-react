@@ -3,6 +3,8 @@ import Likes from './likes'
 
 class Comment extends Component {
 
+
+
   render() {
     return (
       <div className='comment'>
