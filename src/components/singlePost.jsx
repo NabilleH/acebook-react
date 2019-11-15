@@ -31,7 +31,7 @@ class Post extends Component {
 
   render() {
     return (
-      <div className='post'>
+      <div className='card post'>
         <div className='post-message'>
           {this.props.message}
         </div>
@@ -39,7 +39,7 @@ class Post extends Component {
           <small> Username: {this.props.username} </small>
         </div>
         <div className='post-created_at'>
-          <small> Created at: {this.props.created_at} </small>
+          <small> Created at: {new Date(Date.parse(this.props.created_at)).toDateString()} </small>
         </div>
         <div className='post-like'>
         <Likes get_likes={this.props.get_likes}/>
