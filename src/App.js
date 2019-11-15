@@ -6,6 +6,7 @@ import SignUp from './components/signUp';
 import Navbar from './components/navbar';
 import AllPosts from './components/allPosts';
 import AllComments from './components/allComments';
+import Likes from './components/likes';
 
 class App extends Component {
   constructor(props){

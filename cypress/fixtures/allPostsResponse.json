@@ -35,7 +35,8 @@
         "user": {
           "id": 2,
           "username":"bob"
-        }
+        },
+        "get_likes":[2]
       },
       {
         "id": 2,
@@ -46,7 +47,8 @@
         "user": {
           "id": 3,
           "username":"mike"
-        }
+        },
+        "get_likes": []
       }
     ]
   }
