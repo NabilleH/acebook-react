@@ -30,14 +30,15 @@ class AllPosts extends Component {
   }
 
    render() {
-     console.log("this state", this.state.posts)
+     // console.log("this state", this.state.posts)
      if (this.state.posts !== null) {
        return (
          <div className='post-list'>
             {this.state.posts.map(post => <Post key={post.id}
                                            message={post.message}
                                            username={post.user.username}
-                                        created_at={post.created_at}/>
+                                        created_at={post.created_at}
+                                        comments={post.comments}/>
                                           )}
           </div>
        )

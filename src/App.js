@@ -8,7 +8,6 @@ import AllPosts from './components/allPosts';
 import AllComments from './components/allComments';
 
 class App extends Component {
-
   constructor(props){
     super(props);
     this.state = {
