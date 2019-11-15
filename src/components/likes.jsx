@@ -6,7 +6,7 @@ class Likes extends Component {
       if (this.props.get_likes !== null) {
         return (
         <div className="like">
-          <button className="post-likes-button" label="likes">likes</button>
+          <button className="likes-button" label="likes">likes</button>
           {this.props.get_likes}
         </div>
         )

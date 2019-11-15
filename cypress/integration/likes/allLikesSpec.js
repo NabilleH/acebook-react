@@ -9,7 +9,7 @@ beforeEach(function() {
 
     cy.get('.post-message').contains('This is a test post 2')
     cy.get('.post-username').contains('mike')
-    cy.get('.post-likes-button').should('visible')
+    cy.get('.likes-button').should('visible')
     cy.get('.like').contains('5')
   })
 
@@ -17,6 +17,21 @@ beforeEach(function() {
 
     cy.get('.post-message').contains('This is a test post 1')
     cy.get('.post-username').contains('bob')
-    cy.get('.post-like-button').should('not.visible')
+    cy.get('.button .likes-button').should('not.visible')
+  })
+
+  it("shows a number of likes on a comment", function () {
+
+    cy.get('.comment-message').contains('This is a test comment 1')
+    cy.get('.comment-username').contains('bob')
+    cy.get('.likes-button').should('visible')
+    cy.get('.like').contains('2')
+  })
+
+  it("does not show a like button when no comments", function () {
+
+    cy.get('.comment-message').contains('This is a test comment 2')
+    cy.get('.comment-username').contains('mike')
+    cy.get('.button .likes-button').should('not.visible')
   })
 })
