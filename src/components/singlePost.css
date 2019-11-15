@@ -1,0 +1,12 @@
+.post-message {
+  padding: 2px;
+  font-size: 110%;
+}
+
+.post-username {
+  font-size: 90%;
+}
+
+.post-created_at {
+  font-size: 90%;
+}
