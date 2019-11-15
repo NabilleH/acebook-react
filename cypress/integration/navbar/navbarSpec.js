@@ -1,10 +1,21 @@
 describe("navbar", function () {
-  it("can logout a user out via the logout button", function (){
+  it("Shows Login Button and Sign Up page", function (){
     cy.visit('localhost:3000')
-// test needs to be updated to log a user on first.
-    cy.get('.navbar-container').contains('Logout')
-    cy.click('.logout-button')
-    cy.get('.email').contains('email')
-    cy.get('.password').contains('password')
+    cy.get('.session-button').contains('Login')
+  })
+  
+  it('Has a link to /posts', function() {
+    cy.visit('localhost:3000')
+    cy.get('.home-button').click()
+    cy.url().should('include', '/posts')
+  })
+  
+  it('Shows a log out button when logged in', function() {
+    cy.visit('localhost:3000')
+    cy.get('.session-button').click('')
+    cy.get('.email').type('person@person.com')
+    cy.get('.password').type('password')
+    cy.get('.login-button').click()
+    cy.get('.session-button').contains('Log Out Hun?')
   })
 })

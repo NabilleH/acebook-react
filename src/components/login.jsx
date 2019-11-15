@@ -65,7 +65,7 @@ class Login extends Component {
                 type="submit"
                 onClick={this.handleLogin}
                 name="login"
-                className="secondary"
+                className="login-button"
                 label="Log In"
               >
                 Log In

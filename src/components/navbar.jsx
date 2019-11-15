@@ -23,9 +23,9 @@ class Navbar extends Component {
           <Link to="/">
             Winkleface
           </Link>
-          <ul className="logout-button">{this.sessionButton()}</ul>
-
-          <ul>
+          <ul className="session-button">
+            {this.sessionButton()}</ul>
+          <ul className='home-button'>
             <Link to="/posts">
               Home
             </Link>

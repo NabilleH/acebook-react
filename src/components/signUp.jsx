@@ -83,7 +83,7 @@ class SignUp extends Component {
                 type="submit"
                 onClick={this.handleSignUp}
                 name="signup"
-                className="secondary"
+                className="signup-button"
                 label="Sign Up"
               >
                 Sign Up
