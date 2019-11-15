@@ -14,9 +14,7 @@ class Navbar extends Component {
     } else {
       return (
         <Link id="navbar-login-button" to="/log_in">
-          <a className="homepage-link" href="javascript:void(0)">
-            Login
-          </a>
+          Login
         </Link>
       );
     }
@@ -27,17 +25,13 @@ class Navbar extends Component {
       <header>
         <nav className="navbar-container">
           <Link to="/">
-            <a className="homepage-link" href="javascript:void(0)">
-              Winkleface
-            </a>
+            Winkleface
           </Link>
           <ul className="logout-button">{this.sessionButton()}</ul>
 
           <ul>
             <Link to="/posts">
-              <a className="homepage-link" href="javascript:void(0)">
-                Home
-              </a>
+              Home
             </Link>
           </ul>
         </nav>
