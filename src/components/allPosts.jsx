@@ -40,7 +40,11 @@ class AllPosts extends Component {
                                            message={post.message}
                                            username={post.user.username}
                                         created_at={post.created_at}
-                                        comments={post.comments}/>
+                                        comments={post.comments}
+                                        get_likes={post.get_likes}
+                                        getPosts={this.getPosts}
+                                        id={post.id}
+                                        authToken={this.props.authToken}/>
                                           )}
           </div>
        )

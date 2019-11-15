@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import Likes from './likes'
 
 class Comment extends Component {
+
+
 
   render() {
     return (
@@ -13,6 +16,9 @@ class Comment extends Component {
         </div>
         <div className='comment-created_at'>
           <small> Created at: {this.props.created_at} </small>
+        </div>
+        <div className='comment-like'>
+        <Likes get_likes={this.props.get_likes}/>
         </div>
       </div>
     )
