@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Route, Link, Redirect} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Login from './components/login';
 import SignUp from './components/signUp';
 import Navbar from './components/navbar';

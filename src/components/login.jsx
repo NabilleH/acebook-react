@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
-import ReactDOM from "react-dom";
 import axios from "axios";
 
 class Login extends Component {
@@ -61,7 +60,7 @@ class Login extends Component {
                 placeholder="password"
               />
             </div>
-            
+
               <button
                 type="submit"
                 onClick={this.handleLogin}

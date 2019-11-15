@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import Logout from "./logout";
 import { Link } from "react-router-dom";
 
 class Navbar extends Component {
-  constructor(props) {
-    super(props);
-  }
+
 
   sessionButton() {
     if (this.props.authToken) {
