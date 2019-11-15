@@ -54,10 +54,9 @@ class SignUp extends Component {
             onSubmit={e => {
               e.preventDefault();
             }}
-            className="form-login"
+            className="form-signup"
           >
             <div class="form-group">
-              <label></label>
               <input
                 id="email-input"
                 name="email"
@@ -68,18 +67,6 @@ class SignUp extends Component {
               ></input>
             </div>
             <div class="form-group">
-              <label></label>
-              <input
-                id="password-input"
-                name="password"
-                placeholder="password"
-                type="password"
-                className="form-control"
-                required="required"
-              ></input>
-            </div>
-            <div class="form-group">
-              <label></label>
               <input
                 id="username-input"
                 name="username"
@@ -90,13 +77,22 @@ class SignUp extends Component {
               ></input>
             </div>
             <div class="form-group">
+              <input
+                id="password-input"
+                name="password"
+                placeholder="password"
+                type="password"
+                className="form-control"
+                required="required"
+              ></input>
+            </div>
+            <div class="form-group">
               <button
-                name="submit"
+                name="signup"
                 type="submit"
-                className="btn btn-primary"
-                onClick={this.handleSignUp}
-              >
-                Submit
+                className="signup-button btn btn-primary"
+                onClick={this.handleSignUp}>
+                Sign Up
               </button>
             </div>
           </form>

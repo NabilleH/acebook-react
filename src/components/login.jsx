@@ -43,40 +43,49 @@ class Login extends Component {
             }}
             className="form-login"
           >
-            <div className="form-input">
+            <div class="form-group">
               <input
                 id="email-input"
-                label="Email"
-                className="email"
-                type="email"
                 name="email"
                 placeholder="email"
-              />
+                type="text"
+                required="required"
+                className="form-control"
+              ></input>
+            </div>
+            <div class="form-group">
               <input
                 id="password-input"
-                label="Password"
-                className="password"
-                type="password"
                 name="password"
                 placeholder="password"
-              />
+                type="password"
+                className="form-control"
+                required="required"
+              ></input>
+            </div>
+            <div className='row'>
+              <div className='col'>
+              <div class="form-group">
+              <button
+                name="login"
+                type="submit"
+                className="login-button btn btn-primary"
+                onClick={this.handleLogin}>
+                Login
+              </button>
+            </div>
+              </div>
+              <div className='col'>
+                <Link to="/">
+                  <button name="signup" className="btn btn-primary" label="Sign Up">
+                    Sign up
+                  </button>
+                </Link>
+              </div>
             </div>
 
-            <button
-              type="submit"
-              onClick={this.handleLogin}
-              name="login"
-              className="login-button btn btn-primary"
-              label="Log In"
-            >
-              Log In
-            </button>
           </form>
-          <Link to="/">
-            <button name="signup" className="btn btn-primary" label="Sign Up">
-              Sign up
-            </button>
-          </Link>
+
         </div>
       );
     }
