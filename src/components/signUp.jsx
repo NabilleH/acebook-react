@@ -20,7 +20,7 @@ class SignUp extends Component {
           password: document.getElementById("password-input").value
         }
     })
-    .then(function() {
+    .then(function(response) {
       axios.post("/api/v1/auths", {
         auth: {
           email: document.getElementById("email-input").value,
@@ -32,7 +32,7 @@ class SignUp extends Component {
       .catch(function(error) {
         console.log(error)
       })
-    })  
+    })
     .catch(function(error) {
       console.log(error)
     })
