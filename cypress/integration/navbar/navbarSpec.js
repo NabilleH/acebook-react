@@ -6,7 +6,7 @@ describe("navbar", function () {
   
   it('Has a link to /posts', function() {
     cy.visit('localhost:3000')
-    cy.get('.home-button').click()
+    cy.get('.posts-button').click()
     cy.url().should('include', '/posts')
   })
   
@@ -16,6 +16,6 @@ describe("navbar", function () {
     cy.get('.email').type('person@person.com')
     cy.get('.password').type('password')
     cy.get('.login-button').click()
-    cy.get('.session-button').contains('Log Out Hun?')
+    cy.contains('Log Out Hun?')
   })
 })

@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom'
-import axios from 'axios'
+import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
+import axios from "axios";
+import "./formStyle.css";
 
 class SignUp extends Component {
   constructor(props) {
@@ -18,31 +19,36 @@ class SignUp extends Component {
           email: document.getElementById("email-input").value,
           password: document.getElementById("password-input").value
         }
-    })
-    .then(function(response) {
-      axios.post("/api/v1/auths", {
-        auth: {
-          email: document.getElementById("email-input").value,
-          password: document.getElementById("password-input").value
-        }
-      }).then(function(response) {
-        self.props.updateAuthState(response.data.success.token, response.data.success.username)
+      })
+      .then(function(response) {
+        axios
+          .post("/api/v1/auths", {
+            auth: {
+              email: document.getElementById("email-input").value,
+              password: document.getElementById("password-input").value
+            }
+          })
+          .then(function(response) {
+            self.props.updateAuthState(
+              response.data.success.token,
+              response.data.success.username
+            );
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
       })
       .catch(function(error) {
-        console.log(error)
-      })
-    })
-    .catch(function(error) {
-      console.log(error)
-    })
+        console.log(error);
+      });
   }
 
   render() {
     if (this.props.authToken) {
-      return <Redirect to='/posts' />
+      return <Redirect to="/posts" />;
     } else {
       return (
-        <div>
+        <div className="form-container">
           <h3>Sign Up</h3>
           <form
             onSubmit={e => {
@@ -50,44 +56,46 @@ class SignUp extends Component {
             }}
             className="form-signup"
           >
-            <div className="form-input">
+            <div className="form-group">
               <input
                 id="email-input"
-                label="Email"
-                className="email"
-                type="email"
                 name="email"
                 placeholder="email"
-              />
-              <br></br>
+                type="text"
+                required="required"
+                className="email form-control"
+              ></input>
+            </div>
+            <div className="form-group">
               <input
                 id="username-input"
-                label="Username"
-                className="username"
-                type="text"
                 name="username"
                 placeholder="username"
-              />
-              <br></br>
+                type="text"
+                className="username form-control"
+                required="required"
+              ></input>
+            </div>
+            <div className="form-group">
               <input
                 id="password-input"
-                label="Password"
-                className="password"
-                type="password"
                 name="password"
                 placeholder="password"
-              />
+                type="password"
+                className="password form-control"
+                required="required"
+              ></input>
             </div>
-          </form>
+            <div className="form-group">
               <button
-                type="submit"
-                onClick={this.handleSignUp}
                 name="signup"
-                className="signup-button"
-                label="Sign Up"
-              >
+                type="submit"
+                className="signup-button btn btn-primary"
+                onClick={this.handleSignUp}>
                 Sign Up
               </button>
+            </div>
+          </form>
         </div>
       );
     }

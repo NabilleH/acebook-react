@@ -1,17 +1,26 @@
 import React, { Component } from "react";
 import Logout from "./logout";
 import { Link } from "react-router-dom";
+import "../App.css";
 
 class Navbar extends Component {
-
-
   sessionButton() {
     if (this.props.authToken) {
-      return <Logout updateAuthState={this.props.updateAuthState} label="Log Out Hun?" />;
+      return (
+        <Logout className='session-button'
+          updateAuthState={this.props.updateAuthState}
+          label="Log Out Hun?"
+        />
+      );
     } else {
       return (
-        <Link id="navbar-login-button" to="/log_in">
+        <Link
+          id="navbar-login-button"
+          className="session-button nav-item nav-link hover"
+          to="/log_in"
+        >
           Login
+          <span className="sr-only">(current)</span>
         </Link>
       );
     }
@@ -19,17 +28,18 @@ class Navbar extends Component {
   render() {
     return (
       <header>
-        <nav className="navbar-container">
-          <Link to="/">
-            Winkleface
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <Link className="navbar-brand" to="/">
+            Acebook
           </Link>
-          <ul className="session-button">
-            {this.sessionButton()}</ul>
-          <ul className='home-button'>
-            <Link to="/posts">
-              Home
-            </Link>
-          </ul>
+          <div className="" id="navbarNav">
+            <div className="navbar-nav">
+              <Link to="/posts" className="posts-button nav-item nav-link hover">
+                Posts
+              </Link>
+              {this.sessionButton()}
+            </div>
+          </div>
         </nav>
       </header>
     );
