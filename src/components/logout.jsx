@@ -16,7 +16,7 @@ class Logout extends Component {
       <a
         href="# "
         className="nav-item nav-link hover"
-        onClick={this.props.handleLogout}
+        onClick={this.handleLogout}
       >
         {this.props.label}
       </a>

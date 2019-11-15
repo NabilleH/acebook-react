@@ -32,7 +32,7 @@ class Navbar extends Component {
           <Link className="navbar-brand" to="/">
             Acebook
           </Link>
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <div className="" id="navbarNav">
             <div className="navbar-nav">
               <Link to="/posts" className="posts-button nav-item nav-link hover">
                 Posts
