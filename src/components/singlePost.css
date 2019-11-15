@@ -12,6 +12,11 @@
 }
 
 .post {
+  padding: 5%;
   width: 30%;
   width: auto;
+}
+
+.form-comments {
+  padding: 5%;
 }

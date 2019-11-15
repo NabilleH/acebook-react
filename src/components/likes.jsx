@@ -6,8 +6,8 @@ class Likes extends Component {
       if (this.props.get_likes !== null) {
         return (
         <div className="like">
-          <button className="likes-button" label="likes">likes</button>
-          {this.props.get_likes}
+          <button className="likes-button btn-sm btn-primary" label="likes">like</button>
+          {" " + this.props.get_likes.length}
         </div>
         )
       } else {

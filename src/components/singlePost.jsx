@@ -32,33 +32,31 @@ class Post extends Component {
   render() {
     return (
       <div className='card post'>
+        <div className='post-username'>
+          <strong>{this.props.username}</strong> says:
+        </div>
         <div className='post-message'>
           {this.props.message}
-        </div>
-        <div className='post-username'>
-          <small> Username: {this.props.username} </small>
         </div>
         <div className='post-created_at'>
           <small> Created at: {new Date(Date.parse(this.props.created_at)).toDateString()} </small>
         </div>
         <div className='post-like'>
-        <Likes get_likes={this.props.get_likes}/>
+          <Likes get_likes={this.props.get_likes}/>
         </div>
         <form className="form-comments">
-        <div className="form-comments">
-        <input id="comment-input" className="comment-input" placeholder="add comments"
-               type="text"/>
-        <button
-          type="submit"
-          onClick={this.createComment}
-          className="comment-button"
-          label="Comment">
-          Comment
-        </button>
-        </div>
+          <input id="comment-input" className="comment-input" placeholder="add comments"
+                type="text"/>
+          <button
+            type="submit"
+            onClick={this.createComment}
+            className="comment-button btn btn-primary"
+            label="Comment">
+            Comment
+          </button>
         </form>
         <div className='post-comments'>
-        <AllComments comments={this.props.comments}/>
+          <AllComments comments={this.props.comments}/>
         </div>
       </div>
     )
