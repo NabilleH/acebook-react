@@ -1,8 +1,7 @@
-import React, { Component } from "react";
-
-import ReactDOM from "react-dom";
-import axios from "axios";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
+import ReactDOM from 'react-dom';
+import axios from 'axios'
 
 class SignUp extends Component {
   constructor(props) {
@@ -20,14 +19,13 @@ class SignUp extends Component {
           email: document.getElementById("email-input").value,
           password: document.getElementById("password-input").value
         }
-      })
-      .then(function(response) {
-        console.log(response);
-        self.props.updateAuthToken(response.data.success);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+    })
+    .then(function(response) {
+      self.props.updateAuthState(response.data.success.token, response.data.success.username)
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
   }
 
   render() {

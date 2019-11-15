@@ -9,7 +9,7 @@ class Logout extends Component {
 
   handleLogout(e) {
     e.preventDefault()
-    this.props.updateAuthToken(null)
+    this.props.updateAuthState(null)
   }
 
   render() {

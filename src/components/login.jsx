@@ -31,6 +31,7 @@ class Login extends Component {
   }
 
   render() {
+    var self = this
     return (
       <div>
         <h4>Log in</h4>
@@ -58,15 +59,17 @@ class Login extends Component {
               placeholder="password"
             />
           </div>
-          <button
-            type="submit"
-            onClick={this.handleLogin}
-            name="login"
-            className="login"
-            label="Log In"
-          >
-            Log in
-          </button>
+          <Link to="/posts">
+            <button
+              type="submit"
+              onClick={this.handleLogin}
+              name="login"
+              className="secondary"
+              label="Log In"
+            >
+              Log In
+            </button>
+          </Link>
         </form>
         <Link to="/">
           <button name="signup" className="secondary" label="Sign Up">
