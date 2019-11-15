@@ -14,7 +14,7 @@ class Logout extends Component {
 
   render() {
     return (
-      <a href='#' onClick={this.props.handleClick}>
+      <a href="# " onClick={this.props.handleLogout}>
       {this.props.label}
       </a>
     )

@@ -17,7 +17,6 @@ class Navbar extends Component {
     }
   }
   render() {
-    console.log('here')
     return (
       <header>
         <nav className="navbar-container">
