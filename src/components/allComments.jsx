@@ -6,6 +6,7 @@ class AllComments extends Component {
     if (this.props.comments !== null) {
       return (
         <div className="comment-list">
+          <hr size="6" width="90%" align="center" color="green"></hr>
           {this.props.comments.map(comment => (
             <Comment
               key={comment.id}

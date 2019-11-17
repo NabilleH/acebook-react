@@ -7,13 +7,20 @@ class Comment extends Component {
   render() {
     return (
       <div className="comment">
+        <div className="text-left">
+          <DeleteButton
+            authToken={this.props.authToken}
+            getPosts={this.props.getPosts}
+            path={this.props.post_id + "/comments/" + this.props.id}
+          />
+        </div>
         <div className="comment-username">
-          <small> {this.props.username} says: </small>
+          <strong> {this.props.username}</strong> says:
         </div>
         <div className="comment-message">{this.props.message}</div>
         <div className="rows">
           <div className="col">
-            <div className="comment-created_at">
+            <div className="comment-created_at w3-opacity">
               <small>
                 {" "}
                 {new Date(
@@ -26,11 +33,6 @@ class Comment extends Component {
             <div className="comment-like">
               <Likes get_likes={this.props.get_likes} />
             </div>
-            <DeleteButton
-              authToken={this.props.authToken}
-              getPosts={this.props.getPosts}
-              path={this.props.post_id + "/comments/" + this.props.id}
-            />
           </div>
         </div>
       </div>

@@ -35,10 +35,11 @@ class DeleteButton extends Component {
         <button
           name="delete-post"
           type="submit"
-          className="delete-post btn-small btn-danger"
+          className="delete-post btn-sm w3-button w3-theme-l1 w3-margin-bottom"
           onClick={this.handleDelete}
         >
-          Delete
+          <i class="fa fa-delete"></i>
+          X
         </button>
       </small>
     );
